@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dist="http://schemas.android.com/apk/distribution"
+    package="com.uzair.smarttravelmanagement">
+
+    <dist:module dist:instant="true" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".FeedBack"></activity>
+        <activity android:name=".NearbyLocations" />
+        <activity
+            android:name=".WeatherModule.WeatherMain"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ChatsListAdmin" />
+        <activity android:name=".MessageActivity" />
+        <activity android:name=".SingleBookingRequest" />
+        <activity android:name=".BookingRequests" />
+        <activity android:name=".HotelBooking" />
+        <activity
+            android:name=".drawer_main"
+            android:label="@string/title_activity_drawer_main"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".SingleHotelDetail" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDXvGq7CVfI5FaK66Z9vCpmMuUBzbtUcnc" />
+
+        <activity android:name=".AddHotelDetail" />
+        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".Login"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".Notifications.MyFirebaseIdService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

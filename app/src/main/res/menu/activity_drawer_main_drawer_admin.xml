@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_booking_requests"
+            android:icon="@drawable/ic_library_books_black_24dp"
+            android:title="@string/booking_requests" />
+
+        <item
+            android:id="@+id/nav_chat_with_admin"
+            android:icon="@drawable/ic_chat_black_24dp"
+            android:title="@string/chat_with_admin" />
+
+        <item
+            android:id="@+id/nav_chat"
+            android:icon="@drawable/ic_chat_black_24dp"
+            android:title="@string/chats" />
+
+        <item
+            android:id="@+id/nav_weather"
+            android:icon="@drawable/ic_cloud_black_24dp"
+            android:title="@string/weather_updates" />
+
+<!--        <item-->
+<!--            android:id="@+id/nav_nearby_locations"-->
+<!--            android:icon="@drawable/ic_near_me_black_24dp"-->
+<!--            android:title="@string/add_nearby_locations" />-->
+
+        <item
+            android:id="@+id/nav_feedback"
+            android:icon="@drawable/ic_feedback_black_24dp"
+            android:title="@string/feedback" />
+
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_exit_to_app_gray_24dp"
+            android:title="@string/logout" />
+    </group>
+
+</menu>

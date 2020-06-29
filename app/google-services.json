@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "715640914244",
+    "firebase_url": "https://smart-travel-management.firebaseio.com",
+    "project_id": "smart-travel-management",
+    "storage_bucket": "smart-travel-management.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:715640914244:android:e455a4987ad6dadfc21711",
+        "android_client_info": {
+          "package_name": "com.osama.smarttravelmanagement"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "715640914244-7mm245h86sj9vljr1eh91hkaskocl0vv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.osama.smarttravelmanagement",
+            "certificate_hash": "9c90b2ea040507edf835ad97535aaf62af587636"
+          }
+        },
+        {
+          "client_id": "715640914244-mt1pk1abb4qds1i94b3lrln2kvepsfk9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXvGq7CVfI5FaK66Z9vCpmMuUBzbtUcnc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "715640914244-mt1pk1abb4qds1i94b3lrln2kvepsfk9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

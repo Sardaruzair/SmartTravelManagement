@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".AddHotelDetail">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.8"
+        android:background="@drawable/add_fields_background_2" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/screen_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="5dp"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                android:text="@string/add_hotel_detils"
+                android:textColor="@android:color/black"
+                android:textSize="24sp"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/hotel_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/screen_name"
+                android:layout_margin="5dp"
+                android:hint="@string/hotel_name"
+                android:textColor="@android:color/white"
+                android:textColorHint="@android:color/white" />
+
+            <LinearLayout
+                android:id="@+id/city_list_linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/hotel_name"
+                android:layout_margin="5dp"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/city_list"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="2"
+                    android:hint="@string/hotel_name"
+                    android:textColor="@android:color/white" />
+
+                <Button
+                    android:id="@+id/add_city_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/colorSecondaryLight"
+                    android:onClick="AddCityBtn"
+                    android:text="@string/add_City" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/room_types_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/city_list_linear_layout"
+                android:layout_margin="5dp"
+                android:text="@string/type_of_rooms"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/room_types_linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/room_types_text"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/checkbox_single_bed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRoomTypeCheckboxClicked"
+                    android:text="@string/single_bed"
+                    android:textColor="@android:color/white" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_double_bed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRoomTypeCheckboxClicked"
+                    android:text="@string/double_bed"
+                    android:textColor="@android:color/white" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/room_prices_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/room_types_linear_layout"
+                android:layout_margin="5dp"
+                android:text="@string/price_per_bed"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/checkbox_discount_available"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/room_prices_text"
+                android:layout_marginStart="5dp"
+                android:onClick="onRoomTypeCheckboxClicked"
+                android:text="@string/discount_available"
+                android:textColor="@android:color/white"
+                android:textSize="13sp" />
+
+            <LinearLayout
+                android:id="@+id/single_bed_prices_linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/checkbox_discount_available"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/single_bed_price_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:text="@string/single_bed"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/single_bed_price"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="2"
+                    android:enabled="false"
+                    android:hint="Single Bed Price"
+                    android:inputType="number"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@android:color/white" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/discount_single_bed_prices_linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/single_bed_prices_linear_layout"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/discount_single_bed_price_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:text="Discounted Single Bed"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/discount_single_bed_price"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="2"
+                    android:hint="Discounted Single Bed Price"
+                    android:inputType="number"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@android:color/white" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/double_bed_prices_linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/discount_single_bed_prices_linear_layout"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/double_bed_price_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:text="@string/double_bed"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@android:color/white"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/double_bed_price"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="2"
+                    android:enabled="false"
+                    android:hint="Double Bed Price"
+                    android:inputType="number"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@android:color/white" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/discount_double_bed_prices_linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/double_bed_prices_linear_layout"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/discount_double_bed_price_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:text="Discounted Double Bed Price"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@android:color/white"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/discount_double_bed_price"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="2"
+                    android:hint="Discounted Double Bed Price"
+                    android:inputType="number"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@android:color/white" />
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/hotel_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/discount_double_bed_prices_linear_layout"
+                android:layout_margin="5dp"
+                android:hint="Hotel Details / Facilities"
+                android:lines="2"
+                android:textColor="@android:color/white"
+                android:textColorHint="@android:color/white" />
+
+            <EditText
+                android:id="@+id/food_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/hotel_details"
+                android:layout_margin="5dp"
+                android:hint="Food Available"
+                android:lines="2"
+                android:textColor="@android:color/white"
+                android:textColorHint="@android:color/white" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/add_hotel_image_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/food_details"
+                android:layout_margin="5dp"
+                android:orientation="horizontal" />
+
+            <Button
+                android:id="@+id/add_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/add_hotel_image_recycler_view"
+                android:layout_centerHorizontal="true"
+                android:backgroundTint="@color/colorSecondaryLight"
+                android:src="@drawable/ic_image_gray_24dp"
+                android:text="Select Images to Upload" />
+
+            <ImageView
+                android:id="@+id/add_location"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_below="@+id/add_image"
+                android:backgroundTint="@color/colorPrimary"
+                android:src="@drawable/ic_add_location_gray_24dp" />
+
+            <RelativeLayout
+                android:id="@+id/owner_details_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/add_location">
+
+                <TextView
+                    android:id="@+id/owner_details_heading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="@string/owner_details"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/owner_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/owner_details_heading"
+                    android:layout_margin="5dp"
+                    android:hint="Owner Name"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@android:color/white" />
+
+                <EditText
+                    android:id="@+id/owner_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/owner_name"
+                    android:layout_margin="5dp"
+                    android:hint="Owner Phone Number"
+                    android:inputType="phone"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@android:color/white" />
+
+                <EditText
+                    android:id="@+id/owner_cnic"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/owner_phone"
+                    android:layout_margin="5dp"
+                    android:hint="Owner Cnic"
+                    android:inputType="number"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@android:color/white" />
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/add_hotel_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/owner_details_layout"
+                android:layout_margin="10dp"
+                android:backgroundTint="@color/colorSecondaryLight"
+                android:onClick="AddHotelBtn"
+                android:text="@string/add_hotel_detils" />
+
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
